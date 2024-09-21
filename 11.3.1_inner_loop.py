@@ -1,11 +1,17 @@
-prime_number = []
-for a in range(0, 101):
-    if a > 1:
-        for i in range(2, a):
-            if a % i == 0:
-                break
-            else:
-                prime_number.append(a)
-            break
+def isPrime(num):
+    if num < 2: return False
+    for i in range(2, (num // 2) + 1):
+        if num % i == 0:
+            return False
+        return True
 
-print(prime_number)
+
+def findPrimes(limit):
+    primes = []
+    for i in range(2, limit):
+        if isPrime(i):
+            primes.append(i)
+    return primes
+
+
+print(findPrimes(100))
