@@ -4,7 +4,7 @@ def search_binary(arr , target):
     right_starting = len(arr) 
     middle = math.floor(( left_starting + right_starting) / 2)
     if target > arr[right_starting - 1]:
-       return FileNotFoundError("Item out of range")
+       return -1
     if target == arr[middle]:
         return target
     elif target > arr[middle]:
