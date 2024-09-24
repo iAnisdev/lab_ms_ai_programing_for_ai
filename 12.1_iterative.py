@@ -5,6 +5,5 @@ def generate_fibonacci(limit):
     
     return series
 
-
-print(generate_fibonacci(10))
-print(generate_fibonacci(20))
+upto = int(input("Enter a number for fibonacci series count: "))
+print(generate_fibonacci(upto))
