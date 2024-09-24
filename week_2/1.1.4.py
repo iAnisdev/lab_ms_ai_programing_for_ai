@@ -3,7 +3,8 @@ def complexArithmetics(a , b):
         'addition': a + b,
         'subtraction': a - b,
         'multiplication': a * b,
-        'division': a / b
+        'division': a / b,
+        'modulus':  abs(a+b) # To calculate the modulus of a complex number, you can use the built-in abs() function
     }
 
 
