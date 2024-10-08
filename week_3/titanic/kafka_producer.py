@@ -10,6 +10,8 @@ procedure = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=l
 
 def stream_titanic_to_kafka(data, delay=0.5):
     for _, row in data.iterrows():
+        # Ensure the data sent to Kafka is serialized in JSON format and includes a timestamp for each record.
+        row['timestamp'] = time.time()
         procedure.send('titanic_data', value=row.to_dict())
         print(f"Sent data to Kafka: {row.to_dict()}")
         time.sleep(delay)
