@@ -10,8 +10,6 @@ iris_data = pd.read_csv(
     names=["sepal_length", "sepal_width", "petal_length", "petal_width", "species"],
 )
 
-print(iris_data.head())
-
 producer = KafkaProducer(bootstrap_servers="localhost:9092" , value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
 
